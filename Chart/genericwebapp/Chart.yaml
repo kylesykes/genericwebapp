@@ -7,7 +7,7 @@ keywords:
   - web-app
   - python
 sources:
-  - https://mygithub.github.com #This is the repository for your web application code
+  - https://github.com/kylesykes/genericwebapp #This is the repository for your web application code
 maintainers:
-  - name: my_name_here
-    email: me@email.com
+  - name: Kyle Sykes
+    email: kyle.a.sykes@gmail.com
