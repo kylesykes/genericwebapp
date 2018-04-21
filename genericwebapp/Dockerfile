@@ -16,7 +16,7 @@ COPY . /app
 
 FROM gcr.io/distroless/python3
 EXPOSE 8080
-COPY --from=build-env /app /app
+COPY --from=0 /app /app
 WORKDIR /app
 
 CMD ["gunicorn", "-w", "3", "--bind", "0.0.0.0:8080", "views:app"]
