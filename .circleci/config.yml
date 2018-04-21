@@ -6,7 +6,8 @@ jobs:
      - checkout
      # build the application image
      - run: docker build --rm=false -t kylesykes/genericwebapp:$CIRCLE_SHA1 genericwebapp/.
+     - run: docker tag kylesykes/genericwebapp:$CIRCLE_SHA1 kylesykes/genericwebapp:latest
 
      # deploy the image
      - run: docker login -u $DOCKER_USER -p $DOCKER_PASS
-     - run: docker push kylesykes/genericwebapp:$CIRCLE_SHA1 
+     - run: docker push kylesykes/genericwebapp
