@@ -19,4 +19,5 @@ COPY . /app
 # COPY --from=0 /app /app
 # WORKDIR /app
 
-CMD ["gunicorn", "-w", "1", "--bind", "0.0.0.0:8080", "views:app"]
+# CMD ["gunicorn", "-w", "1", "--bind", "0.0.0.0:8080", "views:app"]
+CMD ["python views.py"]
