@@ -13,10 +13,10 @@ RUN pip3 install -U -r /app/requirements.txt
 # Now do rest of work
 COPY . /app
 
+# Distroless images seemed promising, but caused issues launching gunicorn unfortunately
+# FROM gcr.io/distroless/python3
+# EXPOSE 8080
+# COPY --from=0 /app /app
+# WORKDIR /app
 
-FROM gcr.io/distroless/python3
-EXPOSE 8080
-COPY --from=0 /app /app
-WORKDIR /app
-
-CMD ["gunicorn", "-w", "3", "--bind", "0.0.0.0:8080", "views:app"]
+CMD ["gunicorn", "-w", "1", "--bind", "0.0.0.0:8080", "views:app"]
