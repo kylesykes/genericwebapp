@@ -10,7 +10,7 @@ handler:
     auth:
       STORAGE_ACCOUNT_NAME: dummy #Dummy variables for secret variables stored in Chart/values.yaml.  These get injected into Chart/genericwebapp/values.yaml
   image:
-    repository: https://hub.docker.com/r/kylesykes/genericwebapp/ #GIVE URL OF DOCKER IMAGE IN REGISTRY HERE
+    repository: kylesykes/genericwebapp #GIVE URL OF DOCKER IMAGE IN REGISTRY HERE
     tag: latest 
     pullPolicy: IfNotPresent #Or 'Always' if you want to always pull the fresh image
   replicaCount: 1 # Number of replicas to have
