@@ -3,7 +3,7 @@
 
 import json
 
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -13,7 +13,9 @@ def test_status():
     """
     Put in a status check here. 
     """
-    return json.dumps(True)
+    return jsonify({
+        "message": "Successful GET Test"
+        })
 
 
 if __name__ == '__main__':
